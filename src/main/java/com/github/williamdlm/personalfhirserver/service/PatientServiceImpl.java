@@ -1,7 +1,7 @@
 package com.github.williamdlm.personalfhirserver.service;
 
 
-import com.github.williamdlm.personalfhirserver.model.Patient;
+import com.github.williamdlm.personalfhirserver.model.LocalPatient;
 import com.github.williamdlm.personalfhirserver.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,15 +12,15 @@ public class PatientServiceImpl implements PatientService {
     PatientRepository patientRepository;
 
     @Override
-    public Patient findById(Long id){
+    public LocalPatient findById(Long id){
          return patientRepository
                  .findById(id)
                  .orElseThrow(() -> new RuntimeException());
     }
 
     @Override
-    public Patient createPatient(Patient patient) {
-        return patientRepository.save(patient);
+    public LocalPatient createPatient(LocalPatient localPatient) {
+        return patientRepository.save(localPatient);
     }
 
     @Override
@@ -29,9 +29,9 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public Patient updatePatient(Long id, Patient patient) {
-        Patient byId  = this.findById(id);
-        byId = patient;
+    public LocalPatient updatePatient(Long id, LocalPatient localPatient) {
+        LocalPatient byId  = this.findById(id);
+        byId = localPatient;
         return patientRepository.save(byId);
     }
 

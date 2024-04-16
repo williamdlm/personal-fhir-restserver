@@ -1,14 +1,14 @@
 package com.github.williamdlm.personalfhirserver.service;
 
 
-import com.github.williamdlm.personalfhirserver.model.Patient;
+import com.github.williamdlm.personalfhirserver.model.LocalPatient;
 
 public interface PatientService {
-    Patient findById(Long id);
+    LocalPatient findById(Long id);
 
-    Patient createPatient(Patient patient);
+    LocalPatient createPatient(LocalPatient localPatient);
 
     void deletePatientById(Long id);
 
-    Patient updatePatient(Long id, Patient patient);
+    LocalPatient updatePatient(Long id, LocalPatient localPatient);
 }

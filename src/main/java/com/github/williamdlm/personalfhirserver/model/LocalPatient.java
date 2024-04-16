@@ -16,7 +16,7 @@ import java.util.Date;
 @RequiredArgsConstructor
 @SequenceGenerator(name = "SEQ_PACIENTE", sequenceName = "SEQ_PACIENTE", allocationSize = 1)
 @Table(name = "paciente")
-public class Patient {
+public class LocalPatient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_PACIENTE")
