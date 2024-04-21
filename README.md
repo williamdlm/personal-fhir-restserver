@@ -44,6 +44,10 @@ Esta classe é responsável por converter objetos entre o modelo de dados do ser
 4. Execute o comando `mvn spring-boot:run`.
 5. O servidor estará em execução e pronto para receber requisições FHIR.
 
+### Fontes
+- https://hapifhir.io/hapi-fhir/docs/server_jpa/get_started.html
+- https://github.com/hapifhir/hapi-fhir-jpaserver-starter
+
 Este é um projeto em desenvolvimento e está sujeito a alterações. Sinta-se à vontade para explorar, contribuir e utilizar como referência para seus próprios projetos relacionados a FHIR.
 
 Para dúvidas ou sugestões, por favor, entre em contato ou abra uma issue. Obrigado por visitar!
