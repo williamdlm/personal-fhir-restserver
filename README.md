@@ -19,8 +19,6 @@ O objetivo principal deste projeto é fornecer uma base para o desenvolvimento d
 - Implementação de um servidor FHIR capaz de lidar com recursos de saúde conforme o padrão FHIR.
 - Utilização do HAPI FHIR para fornecer suporte ao protocolo FHIR.
 - Integração com o banco de dados utilizando Spring Data JPA para persistência de dados.
-- Agendamento de tarefas utilizando Spring Quartz.
-- Envio de emails utilizando o Spring Boot Mail.
 
 ### Classes Principais
 
@@ -35,6 +33,63 @@ A classe `Patient` representa a entidade de paciente no contexto do servidor FHI
 #### PatientConverter
 
 Esta classe é responsável por converter objetos entre o modelo de dados do servidor FHIR e o modelo de dados utilizado pela aplicação. Ela realiza a conversão de objetos do tipo `Patient` para `com.mv.course.fhirplainserver.models.Patient` e vice-versa.
+
+### Requisições da API
+
+Para fazer requisições para o recurso de paciente (Patient), utilize as seguintes informações:
+
+#### Método POST
+
+Você pode utilizar o seguinte URL para enviar uma requisição POST:
+
+http://localhost:8080/fhir/Patient
+
+
+E utilize o seguinte corpo da mensagem como parâmetro:
+
+```json
+{
+  "resourceType": "Patient",
+  "name": [
+    {
+      "family": "Schrute",
+      "given": [
+        "Dwight"
+      ]
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1970-01-20",
+  "address": [
+    {
+      "line": [
+        "Example Street, 123"
+      ],
+      "city": "Scranton",
+      "state": "PA",
+      "postalCode": "18501",
+      "country": "USA"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+55-81-8707-0000"
+    },
+    {
+      "system": "email",
+      "value": "dwight.schrute@example.com"
+    }
+  ]
+}
+```
+
+Método GET
+Para realizar uma requisição GET para obter informações de um paciente específico, utilize a seguinte URL, substituindo {id} pelo ID do paciente desejado:
+
+```bash
+http://localhost:8080/fhir/Patient/{id}
+```
 
 ### Como Executar
 
